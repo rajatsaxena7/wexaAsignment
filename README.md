@@ -6,7 +6,7 @@ Built for the Wexa AI CognoDB take-home. Data layer is [CognoDB](https://console
 
 ![Roadmap result](docs/screenshots/plan-result.png)
 
-- **Live demo:** _add your hosted URL here_
+- **Live demo:** [learnpath-lake.vercel.app](https://learnpath-lake.vercel.app)
 - **Screen recording:** _add your recording link here_
 
 ---
@@ -182,12 +182,11 @@ Every DB call goes through `lib/db.ts`, which wraps connection and query failure
 
 ## Deployment
 
-The app is a standard Next.js app — deploy it anywhere Next.js runs (Vercel's free tier is the easiest path):
+Live at **[learnpath-lake.vercel.app](https://learnpath-lake.vercel.app)**, deployed via the Vercel CLI. To deploy your own copy:
 
-1. Push this repo to GitHub.
-2. Import it into Vercel.
-3. Add `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD` as environment variables in the Vercel project settings.
-4. Deploy. The CognoDB instance already has data from `npm run seed` — no build-time DB access is required (every DB-backed page is `export const dynamic = "force-dynamic"`, so nothing runs against the database until a real request comes in).
+1. Push this repo to GitHub (or just `vercel link` from a local clone).
+2. `vercel env add NEO4J_URI production`, same for `NEO4J_USERNAME` and `NEO4J_PASSWORD`.
+3. `vercel deploy --prod`. The CognoDB instance already has data from `npm run seed` — no build-time DB access is required (every DB-backed page is `export const dynamic = "force-dynamic"`, so nothing runs against the database until a real request comes in).
 
 ## Screenshots
 
